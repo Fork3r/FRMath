@@ -2,15 +2,15 @@
 // Created by rsalogub on 26.11.19.
 //
 
-#ifndef VECTOR2_H
-#define VECTOR2_H
+#ifndef FR_VECTOR2_H
+#define FR_VECTOR2_H
 
 #ifndef USE_FRMATH
-#include "realization/FRMathRealization/frvector2d.h"
+#include "realization/FRMathRealization/vector2.h"
 namespace FRMath
 {
-    using Vector2 = FRMathDef::FRVector2d;
+    using FRMathDef::Vector2;
 }
 #endif
 
-#endif //VECTOR2_H
+#endif //FR_VECTOR2_H

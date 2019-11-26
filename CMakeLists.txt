@@ -5,15 +5,20 @@ set(CMAKE_CXX_STANDARD 17)
 
 set(USE_FRMATH)
 
-if(USE_FRMATH)
-        find_path(FRMATH_REALIZATION_PATH "frvector2d.h" ${CMAKE_CURRENT_SOURCE_DIR}/realization/FRMathRealization)
+#if(USE_FRMATH)
+        find_path(FRMATH_REALIZATION_PATH "frvector2d.h" ${FRMATH_PATH}/realization/FRMathRealization)
 
         if((NOT FRMATH_REALIZATION_PATH) OR (NOT EXISTS ${FRMATH_REALIZATION_PATH}))
                 execute_process(COMMAND git clone git@github.com:Fork3r/FRMathRealization.git -b dev
-                 ${CMAKE_CURRENT_SOURCE_DIR}/realization/FRMathRealization)
+                 ${FRMATH_PATH}/realization/FRMathRealization)
         endif()
-endif()
-include(realization/FRMathRealization/CMakeLists.txt)
-include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+#endif()
+include(${FRMATH_PATH}/realization/FRMathRealization/CMakeLists.txt)
+include_directories(${FRMATH_PATH})
 
-add_executable(FRMath main.cpp vector2.h ${header} ${src})
+set(header
+        ${header}
+        ${FRMATH_PATH}/vector2.h
+        )
+
+#add_executable(FRMath main.cpp vector2.h ${header} ${src})
