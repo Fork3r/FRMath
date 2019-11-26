@@ -10,17 +10,21 @@
 namespace FRMath
 {
 
+    template <typename Vector2dT>
     class Vector2D
     {
     public:
-        Vector2D() = default;
+        Vector2D();
         Vector2D(pointType x, pointType y);
+        ~Vector2D();
 
         inline void setX(pointType x);
         inline void setY(pointType y);
+
+        inline pointType getX();
+        inline pointType getY();
     private:
-        pointType x_ = 0;
-        pointType y_ = 0;
+        Vector2dT *d_;
     };
 
 }
