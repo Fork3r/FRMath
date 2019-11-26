@@ -16,8 +16,8 @@ namespace FRMath
         Vector2D() = default;
         Vector2D(pointType x, pointType y);
 
-        inline setX(pointType x);
-        inline setY(pointType y);
+        inline void setX(pointType x);
+        inline void setY(pointType y);
     private:
         pointType x_ = 0;
         pointType y_ = 0;
