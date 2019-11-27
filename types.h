@@ -7,6 +7,7 @@
 
 namespace FRMath
 {
-    using pointType = double;
+    using pointType = float;
+    using timeType = float;
 }
 #endif //TYPES_H

@@ -4,13 +4,18 @@
 
 #ifndef FR_VECTOR2_H
 #define FR_VECTOR2_H
-
-#ifndef USE_FRMATH
+#ifdef USE_FRMATH
 #include "realization/FRMathRealization/vector2.h"
 namespace FRMath
 {
     using FRMathDef::Vector2;
 }
 #endif
-
+#ifdef USE_FRGLM
+#include "realization/FRGLMWrapper/vector2.h"
+namespace FRMath
+{
+    using FRGLM::Vector2;
+}
+#endif
 #endif //FR_VECTOR2_H
